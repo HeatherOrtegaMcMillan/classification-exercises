@@ -2,6 +2,9 @@ env.py
 .DS_Store
 .ipynb_checkpoints/
 __pycache__
+# Not sure what I'm going to name the files yet so there's 2
+df_titanic.csv
 titanic.csv
+df_iris.csv
 iris.csv
 telco_churn_data.xlsx
