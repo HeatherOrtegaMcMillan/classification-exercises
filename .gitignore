@@ -7,4 +7,5 @@ df_titanic.csv
 titanic.csv
 df_iris.csv
 iris.csv
+*.csv
 telco_churn_data.xlsx
