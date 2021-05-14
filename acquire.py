@@ -58,6 +58,11 @@ def get_db_data():
 ############################## Extra fancy check for csv stuff ##############################
 
 # use os to check to see if df_titanic.csv exisits
+# if it is, read the csv file into variable called df 
+# if not use the sql query and read_sql into variable called df
+# cache it in a csv file 
+# return df
+
 def get_titanic_data():
     """
     This function loads the titanic data into a dataframe. If the file is cached as df_titanic.csv it will pull from the cached file.
@@ -69,6 +74,7 @@ def get_titanic_data():
     else:
         sql_query =  "SELECT * FROM passengers"
         df = pd.read_sql(sql_query, get_db_url('titanic_db'))
+        df.to_csv('df_titanic.csv')
     return df
 
 
@@ -83,5 +89,6 @@ def get_iris_data():
     else:
         sql_query =  "SELECT * FROM species JOIN measurements USING(species_id)"
         df = pd.read_sql(sql_query, get_db_url('iris_db'))
+        df.to_csv('df_iris.csv')
     return df
 
