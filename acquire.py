@@ -65,6 +65,14 @@ def get_db_data():
 
 def get_titanic_data():
     """
+    This function loads the titanic data into a dataframe. 
+    """
+    sql_query =  "SELECT * FROM passengers"
+    df = pd.read_sql(sql_query, get_db_url('titanic_db'))
+    return df
+
+def get_titanic_data_csv():
+    """
     This function loads the titanic data into a dataframe. If the file is cached as df_titanic.csv it will pull from the cached file.
     If not it will query the database and create the dataframe in that way. 
     Be sure the cashed file is located in the directory you are working in. 
